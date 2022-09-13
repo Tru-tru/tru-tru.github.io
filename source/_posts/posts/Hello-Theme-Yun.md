@@ -15,7 +15,7 @@ categories:
   - Hello World
 url: https://yun.yunyoujun.cn/
 ---
-<div class="box"><img src="https://s2.loli.net/2022/09/13/3DXyW8BsVgEelwv.webp" class="cover">
+<div class="box"><img src="https://s2.loli.net/2022/09/13/3DXyW8BsVgEelwv.webp" class="cover" loading="lazy">
 </div>
 
 ## Hexo Theme Yun

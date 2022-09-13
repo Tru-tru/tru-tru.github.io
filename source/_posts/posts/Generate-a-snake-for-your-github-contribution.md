@@ -10,7 +10,8 @@ tags: Github
 categories: 分享
 ---
 ### _默认样式_
-![Tru-tru's Github Contributions](https://raw.githubusercontent.com/Tru-tru/Tru-tru/output/github-contribution-grid-snake.svg)
+<div class="box"><img src="https://raw.githubusercontent.com/Tru-tru/Tru-tru/output/github-contribution-grid-snake.svg" class="cover" alt="Tru-tru's Github Contributions" loading="eager">
+</div>
 <!-- more -->
 
 ---
