@@ -1,0 +1,45 @@
+name: Hexo Deploy Automatically
+
+on:
+  # allows to manually run the job at any time
+  workflow_dispatch:
+  
+  push:
+    branches:
+      - hexo  # Set a branch name to trigger deployment
+      
+  # pull_request:
+    # branches:
+      # - hexo  # Set a branch name to trigger deployment
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [16]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm ci
+      
+      - name: Generate
+        run: |
+          npm i && npx hexo g
+      
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./public
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
